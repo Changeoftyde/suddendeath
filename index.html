@@ -71,7 +71,7 @@
   function whenTeamsReady() {
     isReady = true;
     for (i = 1; i < 7; i++) {
-      if (document.getElementById("teamname".concat(i.toString())).value = "") {
+      if (document.getElementById("teamname".concat(i.toString())).value == "") {
         isReady = false;
       }
     }
