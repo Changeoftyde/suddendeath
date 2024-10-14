@@ -77,7 +77,7 @@
     }
     if (isReady == true) {
       for (i = 1; i < 7; i++) {
-        document.getElementById("value".concat(i.toString())).innerHTML = document.getElementById("teamname".concat(i.toString())).value;
+        document.getElementById("value".concat(i.toString())).id = document.getElementById("teamname".concat(i.toString())).value;
       }
     }
   }
