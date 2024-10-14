@@ -5,6 +5,45 @@
 <p style="submit" onclick="nextRound()">
 <input style="teams" id="teams" placeholder="First team to delete...">
 <input style="teams" id="teams2" placeholder="Second team to delete...">
+<div id="team1" class="team1">
+  <input id="teamname1" style="teamName">
+  <p id="value1" style="teamValue"></p>
+</div>
+<div id="team2" class="team2">
+  <input id="teamname2" style="teamName">
+  <p id="value2" style="teamValue"></p>
+</div>
+<div id="team3" class="team3">
+  <input id="teamname3" style="teamName">
+  <p id="value3" style="teamValue"></p>
+</div>
+<div id="team4" class="team4">
+  <input id="teamname4" style="teamName">
+  <p id="value4" style="teamValue"></p>
+</div>
+<div id="team5" class="team5">
+  <input id="teamname5" style="teamName">
+  <p id="value5" style="teamValue"></p>
+</div>
+<div id="team6" class="team6">
+  <input id="teamname6" style="teamName">
+  <p id="value6" style="teamValue"></p>
+</div>
+<style>
+  .current {
+    font-size: 10vh;
+    position: absolute;
+    top: 10%;
+    left: 50%;
+  }
+  .nextRound {
+    width: 60%;
+    height: 5%;
+    top: 20%;
+    left: 50%;
+    position: absolute;
+  }
+</style>
 <script>
   function nextRound() {
     if (document.getElementById("nextRound").value == "" && document.getElementById("current").innerHTML != "2048") {
@@ -29,6 +68,37 @@
     document.getElementById(document.getElementById("teams").value).innerHTML = "0";
     }
   }
+  function whenTeamsReady() {
+    isReady = true;
+    for (i = 1; i < 7; i++) {
+      if (document.getElementById("teamname".concat(i.toString())).value = "") {
+        isReady = false;
+      }
+    }
+    if (isReady == true) {
+      for (i = 1; i < 7; i++) {
+        document.getElementById("value".concat(i.toString())).innerHTML = document.getElementById("teamname".concat(i.toString())).value;
+      }
+    }
+  }
+  document.getElementById("teamname1").addEventListener("keydown", function() {
+    whenTeamsReady();
+  });
+  document.getElementById("teamname2").addEventListener("keydown", function() {
+    whenTeamsReady();
+  });
+  document.getElementById("teamname3").addEventListener("keydown", function() {
+    whenTeamsReady();
+  });
+  document.getElementById("teamname4").addEventListener("keydown", function() {
+    whenTeamsReady();
+  });
+  document.getElementById("teamname5").addEventListener("keydown", function() {
+    whenTeamsReady();
+  });
+  document.getElementById("teamname6").addEventListener("keydown", function() {
+    whenTeamsReady();
+  });
 </script>
 </body>
 </html>
